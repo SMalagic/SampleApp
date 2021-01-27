@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6413F46B-4987-425A-B902-B61DC0DD4CAD"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D61F3C6A-3D1B-4558-8677-243D609EB6FC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LoodosApp/Network/Request.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "getMovies(title:year:id:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F4CAF1DD-C3C1-44A5-92B4-66A54808899F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LoodosApp/Network/Request.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getMovies(title:year:id:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F4CAF1DD-C3C1-44A5-92B4-66A54808899F - a5ad6f46b29990e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LoodosApp.GetMoviesRequest.getMovies(title: Swift.String, year: Swift.String, id: Swift.String, completion: (Swift.Optional&lt;LoodosApp.Response&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "LoodosApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/serkanmehmetmalagic/KaynakKodlari/LoodosApp/LoodosApp/Network/Request.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "479">
+               </Location>
+               <Location
+                  uuid = "F4CAF1DD-C3C1-44A5-92B4-66A54808899F - d680c0f714e11544"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in LoodosApp.GetMoviesRequest.getMovies(title: Swift.String, year: Swift.String, id: Swift.String, completion: (Swift.Optional&lt;LoodosApp.Response&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "LoodosApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/serkanmehmetmalagic/KaynakKodlari/LoodosApp/LoodosApp/Network/Request.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "259">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

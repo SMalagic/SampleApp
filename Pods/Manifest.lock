@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (5.2.2)
+  - SDWebImage (5.9.3):
+    - SDWebImage/Core (= 5.9.3)
+  - SDWebImage/Core (5.9.3)
+  - SwiftOverlays (5.0.1)
+  - SwiftyJSON (4.3.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - SDWebImage (~> 5.0)
+  - SwiftOverlays (~> 5.0.1)
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - SDWebImage
+    - SwiftOverlays
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  SDWebImage: a31ee8e90a97303529e03fb0c333eae0eacb88e9
+  SwiftOverlays: ab459ea9194b0e96aaccaa00e9ead1bf6d46eef1
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+
+PODFILE CHECKSUM: 3bf8d7193930ae82532910488d94f53569f6914c
+
+COCOAPODS: 1.9.3
