@@ -8,17 +8,17 @@
 import UIKit
 import Network
 import SwiftOverlays
+import SDWebImage
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var searchHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var searchBar: UITextField!
     
     @IBOutlet weak var tableView: UITableView!
     
     let monitor = NWPathMonitor()
-    
-    lazy   var searchBar:UISearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 200, height: 20))
-
     
     var t = "Serkan"
     var y = "1122"
@@ -27,10 +27,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchBar.placeholder = "Your placeholder"
-        var leftNavBarButton = UIBarButtonItem(customView:searchBar)
-        self.navigationItem.leftBarButtonItem = leftNavBarButton
+        searchHeight.constant = 0
         
+        searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -38,11 +37,11 @@ class ViewController: UIViewController {
         
         fetchMovies()
         
-        UIView.transition(with: view ,duration: 5,options: .transitionCrossDissolve,animations: {
-            self.searchHeight.constant = 0
-            self.view.layoutIfNeeded()
-        })
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title : "Search", style: .plain, target: self , action: #selector(expandSearchBar))
         
+        navigationItem.title = "Search Movies"
+        
+       
     }
     
     func checkNetworkConn(){
@@ -82,9 +81,24 @@ class ViewController: UIViewController {
             }
             else{
                 print(moviesResponseSt)
+                self.tableView.reloadData()
             }
         }
+    }
+    
+    @IBAction func searchCompleteTapped(_ sender: Any) {
+       
         
+        
+    }
+    
+    @objc func expandSearchBar(sender: UIBarButtonItem){
+        UIView.transition(with : view, duration: 0.25, options: .transitionCrossDissolve, animations: { [self] in
+            
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title : "", style: .plain, target: self , action: #selector(expandSearchBar))
+
+            self.searchHeight.constant = 50
+        })
     }
 }
 
@@ -98,9 +112,19 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MovieTableViewCell
         
+        cell.titleLbl.text = moviesResponseSt[indexPath.row].title
         
+        cell.subtitleLbl.text = moviesResponseSt[indexPath.row].plot
+        
+        cell.imageView?.sd_setImage(with: URL(string: moviesResponseSt[indexPath.row].poster))
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailSB") as? MovieDetailViewController
+        vc?.id = moviesResponseSt[indexPath.row].imdbID
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
 }

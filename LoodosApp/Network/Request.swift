@@ -9,11 +9,11 @@ import Alamofire
 import SwiftyJSON
 
 
-var moviesResponseSt = [Response]()
+var moviesResponseSt = [MovieResponse]()
 
 class GetMoviesRequest {
     
-    func getMovies( title : String , year : String , id : String , completion : @escaping ( [Response] , Error?) -> () )  {
+    func getMovies( title : String , year : String , id : String , completion : @escaping ( [MovieResponse] , Error?) -> () )  {
         
         let url = SERVER_URL + title + year + id
         
@@ -23,10 +23,7 @@ class GetMoviesRequest {
             switch response.result {
             case .success( let data ):
                 do {
-                    moviesResponseSt = try JSONDecoder().decode([Response].self,from:data)
-                    
-//                    var moviesResponseJson : JSON?
-//                    moviesResponseJson = try JSON(data: data)
+                    moviesResponseSt = try JSONDecoder().decode([MovieResponse].self,from:data)
 
                     completion( moviesResponseSt , nil )
 

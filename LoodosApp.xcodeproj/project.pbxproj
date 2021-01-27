@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		80EE220FC3CC5E9A966CCF45 /* Pods_LoodosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930805C2F4F274D89936E945 /* Pods_LoodosApp.framework */; };
+		04E75FEB6DDC21F46B83A338 /* Pods_LoodosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B3EA6D7CC03C01C48983E25 /* Pods_LoodosApp.framework */; };
 		F847223325C154870069F726 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F847223225C154870069F726 /* Connection.swift */; };
 		F847223825C1554C0069F726 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F847223725C1554C0069F726 /* Extension.swift */; };
 		F847224025C15B680069F726 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F847223F25C15B680069F726 /* Request.swift */; };
 		F847224525C15BF40069F726 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F847224425C15BF40069F726 /* ResponseModel.swift */; };
 		F847224F25C15DCD0069F726 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F847224E25C15DCD0069F726 /* Constants.swift */; };
 		F847225725C16A7B0069F726 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F847225625C16A7B0069F726 /* MovieTableViewCell.swift */; };
+		F847227125C1820A0069F726 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F847227025C1820A0069F726 /* MovieDetailViewController.swift */; };
+		F847227525C1C8870069F726 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F847227425C1C8870069F726 /* GoogleService-Info.plist */; };
 		F8F03ADF25C152B8005E3727 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F03ADE25C152B8005E3727 /* AppDelegate.swift */; };
 		F8F03AE125C152B8005E3727 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F03AE025C152B8005E3727 /* SceneDelegate.swift */; };
 		F8F03AE325C152B8005E3727 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F03AE225C152B8005E3727 /* ViewController.swift */; };
@@ -23,9 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		206A542BEB35760B96EDF847 /* Pods-LoodosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoodosApp.debug.xcconfig"; path = "Target Support Files/Pods-LoodosApp/Pods-LoodosApp.debug.xcconfig"; sourceTree = "<group>"; };
-		60383F74CBC427E9D2C90CD6 /* Pods-LoodosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoodosApp.release.xcconfig"; path = "Target Support Files/Pods-LoodosApp/Pods-LoodosApp.release.xcconfig"; sourceTree = "<group>"; };
-		930805C2F4F274D89936E945 /* Pods_LoodosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoodosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F62D303E1A1A0AC0DD7481 /* Pods-LoodosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoodosApp.release.xcconfig"; path = "Target Support Files/Pods-LoodosApp/Pods-LoodosApp.release.xcconfig"; sourceTree = "<group>"; };
+		9B3EA6D7CC03C01C48983E25 /* Pods_LoodosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoodosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD11EB92B0ED5E26E68E9C6E /* Pods-LoodosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoodosApp.debug.xcconfig"; path = "Target Support Files/Pods-LoodosApp/Pods-LoodosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F847223225C154870069F726 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		F847223725C1554C0069F726 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F847223F25C15B680069F726 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -33,6 +35,8 @@
 		F847224E25C15DCD0069F726 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F847225225C15ED20069F726 /* Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Pods/Alamofire/Source/Alamofire.swift; sourceTree = "<group>"; };
 		F847225625C16A7B0069F726 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		F847227025C1820A0069F726 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		F847227425C1C8870069F726 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F8F03ADB25C152B8005E3727 /* LoodosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoodosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F03ADE25C152B8005E3727 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8F03AE025C152B8005E3727 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80EE220FC3CC5E9A966CCF45 /* Pods_LoodosApp.framework in Frameworks */,
+				04E75FEB6DDC21F46B83A338 /* Pods_LoodosApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,16 +62,16 @@
 		04D29F49ADD20770EF4B3188 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				206A542BEB35760B96EDF847 /* Pods-LoodosApp.debug.xcconfig */,
-				60383F74CBC427E9D2C90CD6 /* Pods-LoodosApp.release.xcconfig */,
+				AD11EB92B0ED5E26E68E9C6E /* Pods-LoodosApp.debug.xcconfig */,
+				37F62D303E1A1A0AC0DD7481 /* Pods-LoodosApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		48DB684EBEFA17216AA52E52 /* Frameworks */ = {
+		36DF13D89E0739B29100D4B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				930805C2F4F274D89936E945 /* Pods_LoodosApp.framework */,
+				9B3EA6D7CC03C01C48983E25 /* Pods_LoodosApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,7 +108,7 @@
 				F8F03ADD25C152B8005E3727 /* LoodosApp */,
 				F8F03ADC25C152B8005E3727 /* Products */,
 				04D29F49ADD20770EF4B3188 /* Pods */,
-				48DB684EBEFA17216AA52E52 /* Frameworks */,
+				36DF13D89E0739B29100D4B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,11 +129,13 @@
 				F847223625C1553C0069F726 /* Extension */,
 				F847223125C1547C0069F726 /* Network */,
 				F8F03AE225C152B8005E3727 /* ViewController.swift */,
+				F847227025C1820A0069F726 /* MovieDetailViewController.swift */,
 				F847225625C16A7B0069F726 /* MovieTableViewCell.swift */,
 				F8F03AE425C152B8005E3727 /* Main.storyboard */,
 				F847224E25C15DCD0069F726 /* Constants.swift */,
 				F8F03AE725C152BB005E3727 /* Assets.xcassets */,
 				F8F03AE925C152BB005E3727 /* LaunchScreen.storyboard */,
+				F847227425C1C8870069F726 /* GoogleService-Info.plist */,
 				F8F03AEC25C152BB005E3727 /* Info.plist */,
 			);
 			path = LoodosApp;
@@ -142,11 +148,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8F03AEF25C152BB005E3727 /* Build configuration list for PBXNativeTarget "LoodosApp" */;
 			buildPhases = (
-				72C529064BA93F09E0B7E90F /* [CP] Check Pods Manifest.lock */,
+				B3C075D5C62B5501847DAD86 /* [CP] Check Pods Manifest.lock */,
 				F8F03AD725C152B8005E3727 /* Sources */,
 				F8F03AD825C152B8005E3727 /* Frameworks */,
 				F8F03AD925C152B8005E3727 /* Resources */,
-				B90E760659D6611788A9BEE2 /* [CP] Embed Pods Frameworks */,
+				29E168C83137D08293BCA2A8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8F03AEB25C152BB005E3727 /* LaunchScreen.storyboard in Resources */,
+				F847227525C1C8870069F726 /* GoogleService-Info.plist in Resources */,
 				F8F03AE825C152BB005E3727 /* Assets.xcassets in Resources */,
 				F8F03AE625C152B8005E3727 /* Main.storyboard in Resources */,
 			);
@@ -203,7 +210,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		72C529064BA93F09E0B7E90F /* [CP] Check Pods Manifest.lock */ = {
+		29E168C83137D08293BCA2A8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoodosApp/Pods-LoodosApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoodosApp/Pods-LoodosApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoodosApp/Pods-LoodosApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3C075D5C62B5501847DAD86 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -225,23 +249,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B90E760659D6611788A9BEE2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LoodosApp/Pods-LoodosApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LoodosApp/Pods-LoodosApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoodosApp/Pods-LoodosApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -255,6 +262,7 @@
 				F8F03AE325C152B8005E3727 /* ViewController.swift in Sources */,
 				F8F03ADF25C152B8005E3727 /* AppDelegate.swift in Sources */,
 				F847224525C15BF40069F726 /* ResponseModel.swift in Sources */,
+				F847227125C1820A0069F726 /* MovieDetailViewController.swift in Sources */,
 				F8F03AE125C152B8005E3727 /* SceneDelegate.swift in Sources */,
 				F847223325C154870069F726 /* Connection.swift in Sources */,
 				F847224F25C15DCD0069F726 /* Constants.swift in Sources */,
@@ -309,7 +317,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -370,7 +378,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -401,13 +409,14 @@
 		};
 		F8F03AF025C152BB005E3727 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 206A542BEB35760B96EDF847 /* Pods-LoodosApp.debug.xcconfig */;
+			baseConfigurationReference = AD11EB92B0ED5E26E68E9C6E /* Pods-LoodosApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NX8H3T52LG;
 				INFOPLIST_FILE = LoodosApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -421,13 +430,14 @@
 		};
 		F8F03AF125C152BB005E3727 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60383F74CBC427E9D2C90CD6 /* Pods-LoodosApp.release.xcconfig */;
+			baseConfigurationReference = 37F62D303E1A1A0AC0DD7481 /* Pods-LoodosApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NX8H3T52LG;
 				INFOPLIST_FILE = LoodosApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
