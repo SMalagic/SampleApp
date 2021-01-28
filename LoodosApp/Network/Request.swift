@@ -14,7 +14,7 @@ var moviesResponseSt = [MovieResponse]()
 class GetMoviesRequest {
     
     func getMovies( title : String , year : String , id : String , completion : @escaping ( [MovieResponse] , Error?) -> () )  {
-        
+       
         let url = SERVER_URL + title + year + id
         
         AF.request(url , method: .get, encoding : URLEncoding.default  ).responseData(completionHandler: {

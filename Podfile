@@ -12,6 +12,7 @@ pod 'SwiftyJSON', '~> 4.0'
 pod 'SDWebImage', '~> 5.0'
 pod 'IQKeyboardManagerSwift'
 pod 'Firebase/Analytics'
+pod 'Firebase/RemoteConfig'
 
 
 end

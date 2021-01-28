@@ -17,8 +17,8 @@ class MovieDetailViewController: UIViewController {
 
         Analytics.logEvent("movie_name", parameters: nil)
         
+        navigationItem.title = "Batman Dark Knight"
+        
     }
     
-
-
 }
