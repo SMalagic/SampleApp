@@ -133,7 +133,6 @@
                         <outlet property="searchBar" destination="GBa-dW-0Wf" id="f52-Mh-meh"/>
                         <outlet property="searchHeight" destination="bCq-PK-kLB" id="iFi-wP-jDq"/>
                         <outlet property="tableView" destination="e3E-WM-vJL" id="g4l-GF-lHn"/>
-                        <segue destination="EbB-MF-df1" kind="show" identifier="toDetailVC" id="Z8z-78-Hh5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -149,7 +148,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GH6-z4-oH0">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdO-41-ZDk">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1144.5"/>

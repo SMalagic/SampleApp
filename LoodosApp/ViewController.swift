@@ -9,6 +9,7 @@ import UIKit
 import Network
 import SwiftOverlays
 import Firebase
+import SDWebImage
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
@@ -21,10 +22,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     let monitor = NWPathMonitor()
     
     var t = "&t=a"
-    var y = "&y=1990"
+    var y = "&y=a2010"
     var i = "&i=10"
     
-    
+    var result = Bool()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +33,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         searchHeight.constant = 0
         
         checkNetworkConn()
-        
-        fetchMovies()
         
         setDelegates()
         
@@ -71,9 +70,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         DispatchQueue.main.async {
             let alertText = RemoteConfig.remoteConfig().configValue(forKey: "alertText").stringValue ?? ""
             
-            self.showAlert(alertString: "Data fetched from firebase : " + alertText)
+            let alert = UIAlertController(title: nil, message: "Data fetched from firebase : " + alertText, preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
         }
         
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+            self.dismiss(animated: true, completion: nil)
+            self.fetchMovies()
+        }
+        
+
     }
     
     func setNavigationBar(){
@@ -82,6 +88,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setDelegates(){
+        tableView.tableFooterView = UIView()
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
@@ -107,10 +114,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     
                     self.present(alertController, animated: true, completion: nil)
                 }
-                
             }
-            
-            //Bu kısım hücresel veya hotspot üzerinden gelen bir bağlantı ise true döner
+    
             print(path.isExpensive)
         }
         
@@ -120,17 +125,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func fetchMovies(){
         
+        self.showWaitOverlay()
+        
         GetMoviesRequest().getMovies(title: t, year: y, id: i) { (moviesResponseSt, error) in
-            if error == nil{
+            
+            self.removeAllOverlays()
+
+            if moviesResponseSt == nil{
+                self.result = false
                 self.showAlert(alertString: "Error when fetching data")
             }
             else{
-                print(moviesResponseSt)
+
+                self.result = true
+                
             }
+            self.tableView.reloadData()
+
         }
     }
     
     @IBAction func searchCompleteTapped(_ sender: Any) {
+        
+        t =  "&t=" + searchBar.text!
         
     }
     
@@ -148,23 +165,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        if result {
+            return 1
+        }
+        else{
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MovieTableViewCell
         
-        cell.titleLbl.text = "The Good, Bad and the Ugly"
+        cell.titleLbl.text = moviesResponseSt?.title
         
-        cell.subtitleLbl.text = "Blondie (The Good) (Clint Eastwood) is a professional gunslinger who is out trying to earn a few dollars. Angel Eyes (The Bad) (Lee Van Cleef) is a hitman who always commits to a task and sees it through, as long as he is paid to do so. And Tuco (The Ugly) (Eli Wallach) is a wanted outlaw trying to take care of his own hide. Tuco and Blondie share a partnership together making money off of Tuco's bounty, but when Blondie unties the partnership, Tuco tries to hunt down Blondie. When Blondie and Tuco come across a horse carriage loaded with dead bodies, they soon learn from the only survivor, Bill Carson (Antonio Casale), that he and a few other men have buried a stash of gold in a cemetery. Unfortunately, Carson dies and Tuco only finds out the name of the cemetery, while Blondie finds out the name on the grave. Now the two must keep each other alive in order to find the gold. Angel Eyes (who had been looking for Bill Carson) discovers that Tuco and Blondie met with Carson and knows ..."
+        cell.subtitleLbl.text = moviesResponseSt?.plot
         
+        cell.imgView.sd_setImage(with: URL(string: moviesResponseSt?.poster ?? ""))
         
-
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toDetailVC", sender: nil)
+
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailSB") as? MovieDetailViewController
+        vc?.id = moviesResponseSt?.imdbID ?? ""
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
 }

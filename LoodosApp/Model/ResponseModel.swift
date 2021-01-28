@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Welcome
 struct MovieResponse: Decodable {
     let title, year, rated, released: String
     let runtime, genre, director, writer: String
@@ -47,24 +48,11 @@ struct MovieResponse: Decodable {
 
 // MARK: - Rating
 struct Rating: Decodable {
-    let source: Source
-    let value: Value
+    let source, value: String
 
     enum CodingKeys: String, CodingKey {
         case source = "Source"
         case value = "Value"
     }
-}
-
-enum Source: String, Decodable {
-    case internetMovieDatabase = "Internet Movie Database"
-    case metacritic = "Metacritic"
-    case rottenTomatoes = "Rotten Tomatoes"
-}
-
-enum Value: String, Codable {
-    case the32 = "32%"
-    case the36100 = "36/100"
-    case the6010 = "6.0/10"
 }
 
