@@ -10,6 +10,7 @@ import Network
 import SwiftOverlays
 import Firebase
 import SDWebImage
+import PopupDialog
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
@@ -62,7 +63,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
             }
         }
-        
     }
     
     func updateValues(){
@@ -70,15 +70,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         DispatchQueue.main.async {
             let alertText = RemoteConfig.remoteConfig().configValue(forKey: "alertText").stringValue ?? ""
             
-            let alert = UIAlertController(title: nil, message: "Data fetched from firebase : " + alertText, preferredStyle: .alert)
-            self.present(alert, animated: true, completion: nil)
+            let title = "Data fetched from Firebase"
+            let message = alertText
+            let popup = PopupDialog(title: title, message: message)
+            popup.transitionStyle = .fadeIn
+            self.present(popup, animated: true, completion: nil)
+            
         }
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
             self.dismiss(animated: true, completion: nil)
             self.fetchMovies()
         }
-        
 
     }
     
@@ -147,7 +150,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func searchCompleteTapped(_ sender: Any) {
         
-        t =  "&t=" + searchBar.text!
+        let str = searchBar.text
+        
+        t =  "&t=" + str!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        fetchMovies()
         
     }
     

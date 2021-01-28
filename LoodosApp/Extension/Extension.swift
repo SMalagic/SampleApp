@@ -11,8 +11,8 @@ extension UIViewController {
     
     func showAlert(alertString : String)
     {
-        let alert = UIAlertController(title: "Uyarı", message: alertString, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "tamam", style: UIAlertAction.Style.default, handler: nil))
+        let alert = UIAlertController(title: "Warning", message: alertString, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     

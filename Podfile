@@ -13,6 +13,7 @@ pod 'SDWebImage', '~> 5.0'
 pod 'IQKeyboardManagerSwift'
 pod 'Firebase/Analytics'
 pod 'Firebase/RemoteConfig'
+pod 'PopupDialog', '~> 1.1'
 
 
 end

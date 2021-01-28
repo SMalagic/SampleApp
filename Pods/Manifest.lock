@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.2.2)
+  - DynamicBlurView (4.1.0)
   - Firebase/Analytics (6.34.0):
     - Firebase/Core
   - Firebase/Core (6.34.0):
@@ -74,6 +75,8 @@ PODS:
     - nanopb/encode (= 1.30906.0)
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
+  - PopupDialog (1.1.1):
+    - DynamicBlurView (~> 4.0)
   - PromisesObjC (1.2.12)
   - SDWebImage (5.9.3):
     - SDWebImage/Core (= 5.9.3)
@@ -86,6 +89,7 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/RemoteConfig
   - IQKeyboardManagerSwift
+  - PopupDialog (~> 1.1)
   - SDWebImage (~> 5.0)
   - SwiftOverlays (~> 5.0.1)
   - SwiftyJSON (~> 4.0)
@@ -93,6 +97,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - DynamicBlurView
     - Firebase
     - FirebaseABTesting
     - FirebaseAnalytics
@@ -105,6 +110,7 @@ SPEC REPOS:
     - GoogleUtilities
     - IQKeyboardManagerSwift
     - nanopb
+    - PopupDialog
     - PromisesObjC
     - SDWebImage
     - SwiftOverlays
@@ -112,6 +118,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
   FirebaseABTesting: 8a9d8df3acc2b43f4a22014ddf9f601bca6af699
   FirebaseAnalytics: 3bb096873ee0d7fa4b6c70f5e9166b6da413cc7f
@@ -124,11 +131,12 @@ SPEC CHECKSUMS:
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
+  PopupDialog: 720c92befd8bc23c13442254945213db5612f149
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SDWebImage: a31ee8e90a97303529e03fb0c333eae0eacb88e9
   SwiftOverlays: ab459ea9194b0e96aaccaa00e9ead1bf6d46eef1
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: bd042173742cada7ac719aa3fc8e0f7788bfc2b1
+PODFILE CHECKSUM: ef695406f584b07e4f1928838084b32b634309a7
 
 COCOAPODS: 1.10.1
