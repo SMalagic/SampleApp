@@ -16,6 +16,8 @@
 		F847225725C16A7B0069F726 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F847225625C16A7B0069F726 /* MovieTableViewCell.swift */; };
 		F847227125C1820A0069F726 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F847227025C1820A0069F726 /* MovieDetailViewController.swift */; };
 		F847227525C1C8870069F726 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F847227425C1C8870069F726 /* GoogleService-Info.plist */; };
+		F8A6809D25C4173F00189BDE /* MovieDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6809C25C4173F00189BDE /* MovieDetailModel.swift */; };
+		F8A680A025C4174F00189BDE /* MovieDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6809F25C4174F00189BDE /* MovieDetailRequest.swift */; };
 		F8F03ADF25C152B8005E3727 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F03ADE25C152B8005E3727 /* AppDelegate.swift */; };
 		F8F03AE125C152B8005E3727 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F03AE025C152B8005E3727 /* SceneDelegate.swift */; };
 		F8F03AE325C152B8005E3727 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F03AE225C152B8005E3727 /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 		F847225625C16A7B0069F726 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		F847227025C1820A0069F726 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		F847227425C1C8870069F726 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F8A6809C25C4173F00189BDE /* MovieDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModel.swift; sourceTree = "<group>"; };
+		F8A6809F25C4174F00189BDE /* MovieDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailRequest.swift; sourceTree = "<group>"; };
 		F8F03ADB25C152B8005E3727 /* LoodosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoodosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F03ADE25C152B8005E3727 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8F03AE025C152B8005E3727 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 			children = (
 				F847223225C154870069F726 /* Connection.swift */,
 				F847223F25C15B680069F726 /* Request.swift */,
+				F8A6809F25C4174F00189BDE /* MovieDetailRequest.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -97,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				F847224425C15BF40069F726 /* ResponseModel.swift */,
+				F8A6809C25C4173F00189BDE /* MovieDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,12 +265,14 @@
 				F847223825C1554C0069F726 /* Extension.swift in Sources */,
 				F847224025C15B680069F726 /* Request.swift in Sources */,
 				F847225725C16A7B0069F726 /* MovieTableViewCell.swift in Sources */,
+				F8A680A025C4174F00189BDE /* MovieDetailRequest.swift in Sources */,
 				F8F03AE325C152B8005E3727 /* ViewController.swift in Sources */,
 				F8F03ADF25C152B8005E3727 /* AppDelegate.swift in Sources */,
 				F847224525C15BF40069F726 /* ResponseModel.swift in Sources */,
 				F847227125C1820A0069F726 /* MovieDetailViewController.swift in Sources */,
 				F8F03AE125C152B8005E3727 /* SceneDelegate.swift in Sources */,
 				F847223325C154870069F726 /* Connection.swift in Sources */,
+				F8A6809D25C4173F00189BDE /* MovieDetailModel.swift in Sources */,
 				F847224F25C15DCD0069F726 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

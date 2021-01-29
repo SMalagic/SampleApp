@@ -1,21 +1,21 @@
 //
-//  Request.swift
+//  MovieDetailRequest.swift
 //  LoodosApp
 //
-//  Created by Serkan Mehmet Malagiç on 27.01.2021.
+//  Created by Serkan Mehmet Malagiç on 29.01.2021.
 //
 
+import Foundation
 import Alamofire
 import SwiftyJSON
 
+var movieDetailSt : MovieDetailModel?
 
-var moviesResponseSt : MovieResponse?
-
-class GetMoviesRequest {
+class GetMovieDetailRequest {
     
-    func getMovies( search : String , year : String , id : String , completion : @escaping ( MovieResponse? , Error?) -> () )  {
+    func getMovieDetail( id : String , completion : @escaping ( MovieDetailModel? , Error?) -> () )  {
        
-        let url = SERVER_URL + search
+        let url = SERVER_URL + id
         
         AF.request(url , method: .get, encoding : URLEncoding.default  ).responseData(completionHandler: {
             response in
@@ -27,8 +27,8 @@ class GetMoviesRequest {
                     let json = try JSON(data: response.data!)
 
                     if json["Response"].string == "True" {
-                        moviesResponseSt = try JSONDecoder().decode(MovieResponse.self,from:data)
-                        completion( moviesResponseSt , nil )
+                        movieDetailSt = try JSONDecoder().decode(MovieDetailModel.self,from:data)
+                        completion( movieDetailSt , nil )
 
                     }else{
                         completion( nil , nil )
@@ -40,7 +40,7 @@ class GetMoviesRequest {
                 }
             case .failure(let error):
                 print (error)
-                completion( moviesResponseSt, error )
+                completion( movieDetailSt, error )
             }
         })
         

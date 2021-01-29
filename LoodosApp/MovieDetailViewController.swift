@@ -30,28 +30,45 @@ class MovieDetailViewController: UIViewController {
         super.viewDidLoad()
 
         Analytics.logEvent("movie_name", parameters: nil)
-        
-        navigationItem.title = moviesResponseSt?.title
-                
-        setVariables()
+                        
+        fetchData()
         
     }
     
     func setVariables(){
         
-        imgView.sd_setImage(with: URL(string: moviesResponseSt?.poster ?? ""))
+    }
+    
+    func fetchData(){
         
-        titleLbl.text = moviesResponseSt?.title
+        self.showWaitOverlayWithText("Getting movie information")
         
-        yearLbl.text = moviesResponseSt?.year
-        
-        releasedLbl.text = moviesResponseSt?.released
-        
-        plotLbl.text = moviesResponseSt?.plot
-        
-        runtimeLbl.text = moviesResponseSt?.runtime
-        
-        genreLbl.text = moviesResponseSt?.genre
+        GetMovieDetailRequest().getMovieDetail(id: "&i=" + id) { (movieDetailSt, error) in
+            
+            self.removeAllOverlays()
+            
+            if error != nil {
+                self.showAlert(alertString: "Error when fetching data")
+            }else{
+                
+                self.imgView.sd_setImage(with: URL(string: movieDetailSt?.poster ?? ""))
+                
+                self.titleLbl.text = movieDetailSt?.title
+                
+                self.yearLbl.text = movieDetailSt?.year
+                
+                self.releasedLbl.text = movieDetailSt?.released
+                
+                self.plotLbl.text = movieDetailSt?.plot
+                
+                self.runtimeLbl.text = movieDetailSt?.runtime
+                
+                self.genreLbl.text = movieDetailSt?.genre
+                
+                self.navigationItem.title = movieDetailSt?.title
+                
+            }
+        }
         
     }
 }

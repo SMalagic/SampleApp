@@ -24,7 +24,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     let monitor = NWPathMonitor()
     
-    var t = "&t=a"
+    var s = "&s=god"
     var y = "&y=a2010"
     var i = "&i=10"
     
@@ -133,31 +133,37 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         self.showWaitOverlay()
         
-        GetMoviesRequest().getMovies(title: t, year: y, id: i) { (moviesResponseSt, error) in
+        GetMoviesRequest().getMovies(search: s, year: y, id: i) { (moviesResponseSt, error) in
             
             self.removeAllOverlays()
 
             if moviesResponseSt == nil{
-                self.result = false
                 self.showAlert(alertString: "Error when fetching data")
             }
             else{
-
-                self.result = true
-                
+                print(moviesResponseSt)
+                self.tableView.reloadData()
             }
-            self.tableView.reloadData()
 
         }
     }
     
     @IBAction func searchCompleteTapped(_ sender: Any) {
         
-        let str = searchBar.text
-        
-        t =  "&t=" + str!.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        fetchMovies()
+        if searchBar.text == ""{
+            showAlert(alertString: "search text is empty")
+        }else{
+            
+            view.endEditing(true)
+            
+            let str = searchBar.text
+            
+            searchBar.text = ""
+            
+            s =  "&s=" + str!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            fetchMovies()
+        }
         
     }
     
@@ -175,22 +181,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if result {
-            return 1
-        }
-        else{
-            return 0
-        }
+        
+        return moviesResponseSt?.search!.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MovieTableViewCell
         
-        cell.titleLbl.text = moviesResponseSt?.title
+        cell.titleLbl.text = moviesResponseSt?.search![indexPath.row].title
         
-        cell.subtitleLbl.text = moviesResponseSt?.plot
+        cell.subtitleLbl.text = moviesResponseSt?.search![indexPath.row].type
         
-        cell.imgView.sd_setImage(with: URL(string: moviesResponseSt?.poster ?? ""))
+        cell.imgView.sd_setImage(with: URL(string: moviesResponseSt?.search![indexPath.row].poster ?? "" ))
         
         return cell
     }
@@ -198,7 +200,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailSB") as? MovieDetailViewController
-        vc?.id = moviesResponseSt?.imdbID ?? ""
+        vc?.id = moviesResponseSt?.search![indexPath.row].imdbID ?? ""
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     

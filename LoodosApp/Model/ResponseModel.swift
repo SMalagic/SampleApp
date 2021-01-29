@@ -9,50 +9,51 @@ import Foundation
 
 // MARK: - Welcome
 struct MovieResponse: Decodable {
-    let title, year, rated, released: String
-    let runtime, genre, director, writer: String
-    let actors, plot, language, country: String
-    let awards: String
-    let poster: String
-    let ratings: [Rating]
-    let metascore, imdbRating, imdbVotes, imdbID: String
-    let type, dvd, boxOffice, production: String
-    let website, response: String
 
-    enum CodingKeys: String, CodingKey {
-        case title = "Title"
-        case year = "Year"
-        case rated = "Rated"
-        case released = "Released"
-        case runtime = "Runtime"
-        case genre = "Genre"
-        case director = "Director"
-        case writer = "Writer"
-        case actors = "Actors"
-        case plot = "Plot"
-        case language = "Language"
-        case country = "Country"
-        case awards = "Awards"
-        case poster = "Poster"
-        case ratings = "Ratings"
-        case metascore = "Metascore"
-        case imdbRating, imdbVotes, imdbID
-        case type = "Type"
-        case dvd = "DVD"
-        case boxOffice = "BoxOffice"
-        case production = "Production"
-        case website = "Website"
-        case response = "Response"
-    }
+  enum CodingKeys: String, CodingKey {
+    case search = "Search"
+    case response = "Response"
+    case totalResults = "totalResults"
+  }
+
+  var search: [Search]?
+  var response: String?
+  var totalResults: String?
+
+  init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+    search = try container.decodeIfPresent([Search].self, forKey: .search)
+    response = try container.decodeIfPresent(String.self, forKey: .response)
+    totalResults = try container.decodeIfPresent(String.self, forKey: .totalResults)
+  }
+
 }
 
-// MARK: - Rating
-struct Rating: Decodable {
-    let source, value: String
+struct Search: Decodable {
 
-    enum CodingKeys: String, CodingKey {
-        case source = "Source"
-        case value = "Value"
-    }
+  enum CodingKeys: String, CodingKey {
+    case type = "Type"
+    case poster = "Poster"
+    case imdbID = "imdbID"
+    case year = "Year"
+    case title = "Title"
+  }
+
+  var type: String?
+  var poster: String?
+  var imdbID: String?
+  var year: String?
+  var title: String?
+
+  init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+    type = try container.decodeIfPresent(String.self, forKey: .type)
+    poster = try container.decodeIfPresent(String.self, forKey: .poster)
+    imdbID = try container.decodeIfPresent(String.self, forKey: .imdbID)
+    year = try container.decodeIfPresent(String.self, forKey: .year)
+    title = try container.decodeIfPresent(String.self, forKey: .title)
+  }
+
 }
+
 
