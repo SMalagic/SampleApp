@@ -85,22 +85,26 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Movies" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GBa-dW-0Wf">
                                         <rect key="frame" x="8" y="9" width="314" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gby-Qh-lmo">
                                         <rect key="frame" x="330" y="9" width="37" height="33"/>
+                                        <color key="backgroundColor" red="0.30182442069999998" green="0.42349946500000002" blue="0.44901478290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="37" id="DjT-Lx-6oP"/>
                                         </constraints>
-                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="magnifyingglass" catalog="system"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="magnifyingglass" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="searchCompleteTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dfs-vT-Nmh"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.94978994130000005" green="0.9224939942" blue="0.86384350060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="GBa-dW-0Wf" firstAttribute="leading" secondItem="GKK-R9-QeT" secondAttribute="leading" constant="8" id="EyH-46-3Ue"/>
                                     <constraint firstItem="Gby-Qh-lmo" firstAttribute="leading" secondItem="GBa-dW-0Wf" secondAttribute="trailing" constant="8" symbolic="YES" id="Gc6-Oi-Gsi"/>
@@ -131,6 +135,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="GBa-dW-0Wf" id="f52-Mh-meh"/>
+                        <outlet property="searchBtn" destination="Gby-Qh-lmo" id="VXg-60-yoE"/>
                         <outlet property="searchHeight" destination="bCq-PK-kLB" id="iFi-wP-jDq"/>
                         <outlet property="tableView" destination="e3E-WM-vJL" id="g4l-GF-lHn"/>
                     </connections>

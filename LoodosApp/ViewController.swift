@@ -14,6 +14,8 @@ import PopupDialog
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var searchBtn: UIButton!
+    
     @IBOutlet weak var searchHeight: NSLayoutConstraint!
     
     @IBOutlet weak var searchBar: UITextField!
@@ -32,6 +34,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         searchHeight.constant = 0
+        searchBtn.layer.cornerRadius = 5
         
         checkNetworkConn()
         
