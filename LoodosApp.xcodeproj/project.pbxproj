@@ -15,7 +15,7 @@
 		F847224F25C15DCD0069F726 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F847224E25C15DCD0069F726 /* Constants.swift */; };
 		F847225725C16A7B0069F726 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F847225625C16A7B0069F726 /* MovieTableViewCell.swift */; };
 		F847227125C1820A0069F726 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F847227025C1820A0069F726 /* MovieDetailViewController.swift */; };
-		F847227525C1C8870069F726 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F847227425C1C8870069F726 /* GoogleService-Info.plist */; };
+		F87F75D225C6F97900B854DD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F87F75D125C6F97900B854DD /* GoogleService-Info.plist */; };
 		F8A6809D25C4173F00189BDE /* MovieDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6809C25C4173F00189BDE /* MovieDetailModel.swift */; };
 		F8A680A025C4174F00189BDE /* MovieDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6809F25C4174F00189BDE /* MovieDetailRequest.swift */; };
 		F8F03ADF25C152B8005E3727 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F03ADE25C152B8005E3727 /* AppDelegate.swift */; };
@@ -38,7 +38,7 @@
 		F847225225C15ED20069F726 /* Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Pods/Alamofire/Source/Alamofire.swift; sourceTree = "<group>"; };
 		F847225625C16A7B0069F726 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		F847227025C1820A0069F726 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
-		F847227425C1C8870069F726 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F87F75D125C6F97900B854DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F8A6809C25C4173F00189BDE /* MovieDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModel.swift; sourceTree = "<group>"; };
 		F8A6809F25C4174F00189BDE /* MovieDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailRequest.swift; sourceTree = "<group>"; };
 		F8F03ADB25C152B8005E3727 /* LoodosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoodosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,9 +139,9 @@
 				F847225625C16A7B0069F726 /* MovieTableViewCell.swift */,
 				F8F03AE425C152B8005E3727 /* Main.storyboard */,
 				F847224E25C15DCD0069F726 /* Constants.swift */,
+				F87F75D125C6F97900B854DD /* GoogleService-Info.plist */,
 				F8F03AE725C152BB005E3727 /* Assets.xcassets */,
 				F8F03AE925C152BB005E3727 /* LaunchScreen.storyboard */,
-				F847227425C1C8870069F726 /* GoogleService-Info.plist */,
 				F8F03AEC25C152BB005E3727 /* Info.plist */,
 			);
 			path = LoodosApp;
@@ -207,7 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8F03AEB25C152BB005E3727 /* LaunchScreen.storyboard in Resources */,
-				F847227525C1C8870069F726 /* GoogleService-Info.plist in Resources */,
+				F87F75D225C6F97900B854DD /* GoogleService-Info.plist in Resources */,
 				F8F03AE825C152BB005E3727 /* Assets.xcassets in Resources */,
 				F8F03AE625C152B8005E3727 /* Main.storyboard in Resources */,
 			);

@@ -201,6 +201,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
 
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailSB") as? MovieDetailViewController
         vc?.id = moviesResponseSt?.search![indexPath.row].imdbID ?? ""
+        vc?.modalTransitionStyle = .crossDissolve
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
