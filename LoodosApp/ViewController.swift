@@ -15,15 +15,11 @@ import PopupDialog
 class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var searchBtn: UIButton!
-    
     @IBOutlet weak var searchHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var searchBar: UITextField!
-    
     @IBOutlet weak var tableView: UITableView!
     
     let monitor = NWPathMonitor()
-    
     var s = "&s=god"
     var y = "&y=a2010"
     var i = "&i=10"
@@ -37,9 +33,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         searchBtn.layer.cornerRadius = 5
         
         checkNetworkConn()
-        
         setDelegates()
-        
         setNavigationBar()
     
     }
@@ -63,7 +57,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     return
                 }
                 updateValues()
-
             }
         }
     }
@@ -78,14 +71,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let popup = PopupDialog(title: title, message: message)
             popup.transitionStyle = .fadeIn
             self.present(popup, animated: true, completion: nil)
-            
         }
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
             self.dismiss(animated: true, completion: nil)
             self.fetchMovies()
         }
-
     }
     
     func setNavigationBar(){
@@ -106,7 +97,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if path.status == .satisfied {
                 print("Connected Established")
                 self.checkFirebaseRemote()
-
             } else {
                 DispatchQueue.main.async {
                     
@@ -121,10 +111,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     self.present(alertController, animated: true, completion: nil)
                 }
             }
-    
             print(path.isExpensive)
         }
-        
         let queue = DispatchQueue(label: "Monitor")
         monitor.start(queue: queue)
     }
@@ -132,11 +120,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func fetchMovies(){
         
         self.showWaitOverlay()
-        
         GetMoviesRequest().getMovies(search: s, year: y, id: i) { (moviesResponseSt, error) in
-            
             self.removeAllOverlays()
-
             if moviesResponseSt == nil{
                 self.showAlert(alertString: "Error when fetching data")
             }
@@ -144,7 +129,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 print(moviesResponseSt)
                 self.tableView.reloadData()
             }
-
         }
     }
     
@@ -153,23 +137,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if searchBar.text == ""{
             showAlert(alertString: "search text is empty")
         }else{
-            
             view.endEditing(true)
-            
             let str = searchBar.text
-            
             searchBar.text = ""
-            
             s =  "&s=" + str!.trimmingCharacters(in: .whitespacesAndNewlines)
-            
             fetchMovies()
         }
-        
     }
     
     @objc func expandSearchBar(sender: UIBarButtonItem){
         UIView.transition(with : view, duration: 0.25, options: .transitionCrossDissolve, animations: { [self] in
-            
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(title : "", style: .plain, target: self , action: #selector(expandSearchBar))
 
             self.searchHeight.constant = 50
@@ -177,28 +154,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-
-
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return moviesResponseSt?.search!.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MovieTableViewCell
-        
         cell.titleLbl.text = moviesResponseSt?.search![indexPath.row].title
-        
         cell.subtitleLbl.text = moviesResponseSt?.search![indexPath.row].type
-        
         cell.imgView.sd_setImage(with: URL(string: moviesResponseSt?.search![indexPath.row].poster ?? "" ))
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailSB") as? MovieDetailViewController
         vc?.id = moviesResponseSt?.search![indexPath.row].imdbID ?? ""
         vc?.modalTransitionStyle = .crossDissolve
